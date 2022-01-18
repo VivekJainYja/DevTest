@@ -8,6 +8,8 @@ namespace DeveloperTest.Database
     {
         public DbSet<Job> Jobs { get; set; }
 
+        public DbSet<Customer> Customers { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
@@ -28,9 +30,25 @@ namespace DeveloperTest.Database
                 .HasData(new Job
                 {
                     JobId = 1,
+                    Customer = "James",
                     Engineer = "Test",
                     When = DateTime.Now
                 });
+
+            modelBuilder.Entity<Customer>()
+               .HasData(new Customer
+               {
+                   Id = 1,
+                   Name = "James",
+                   Type = "Small"
+               });
+
+            modelBuilder.Entity<Customer>()
+               .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Customer>()
+                .Property(x => x.Id)
+                .ValueGeneratedOnAdd();
         }
     }
 }

@@ -1,4 +1,6 @@
 <p>JobId: {{job.jobId}}</p>
+<p>Customer: {{job.customer == null ? "Unknown": job.customer}}</p>
+<p>Type: {{job.type}}</p>
 <p>Engineer: {{job.engineer}}</p>
 <p>When: {{job.when | date:'shortDate'}}</p>
 

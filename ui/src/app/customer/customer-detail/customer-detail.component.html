@@ -1,0 +1,18 @@
+<h1>{{ customer.name }}'s Information</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{customer.name}}</td>
+      <td>{{customer.type}}</td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-primary" [routerLink]="'/customer'">Back</button>
